@@ -124,7 +124,9 @@ when signed out.
 To release, bump `version` in `package.json` and add a `CHANGELOG.md` entry,
 merge, then push a tag `v<version>`. The release workflow packages the
 extension, publishes it to the VS Code Marketplace and Open VSX, and attaches
-the `.vsix` to a GitHub release.
+the `.vsix` to a GitHub release. It stores no tokens: both registries trust
+`release.yml` in the `release` environment through trusted publishing
+(OIDC), set up on the `mistpine` publisher in each.
 
 ## Credits
 
