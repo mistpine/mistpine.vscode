@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["@mistpine/port-kit/biome"],
+  "files": {
+    "includes": ["**", "!**/assets", "!**/*.md", "!themes", "!scripts/render/sample"]
+  }
+}

@@ -1,0 +1,37 @@
+# Filing through the API or `gh issue create`? Forms only apply on the web:
+# write the body with each field's label below as a `### ` heading, in order.
+name: Color a language or extension
+description: A language, an extension's view or a new editor feature that mistpine should color.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        mistpine colors syntax by TextMate scopes and semantic tokens, and the
+        interface by VS Code's color ids, so most languages and extensions
+        follow along. This is for the ones that don't.
+  - type: input
+    id: target
+    attributes:
+      label: Language, extension or feature
+      placeholder: "Rust (rust-analyzer), GitLens, the notebook editor"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What looks off
+      description: Which parts keep default or clashing colors, and which spec roles you think fit (types, properties, diff, search).
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: How it looks with mistpine today. Drag an image here.
+  - type: textarea
+    id: scopes
+    attributes:
+      label: Scopes or color ids
+      description: "From **Developer: Inspect Editor Tokens and Scopes**, or the extension's contributed colors."
+      render: text

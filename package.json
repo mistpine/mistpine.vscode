@@ -1,0 +1,66 @@
+{
+  "name": "mistpine",
+  "displayName": "mistpine",
+  "description": "A dark color theme of cool, misty grays over a deep blue-green night, with muted, earthy accents.",
+  "version": "1.0.0",
+  "publisher": "mistpine",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#0b1f27",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/mistpine/mistpine.vscode#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mistpine/mistpine.vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mistpine/mistpine.vscode/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color theme",
+    "dark",
+    "dark theme",
+    "mistpine",
+    "cursor"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "mistpine",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mistpine-color-theme.json"
+      }
+    ]
+  },
+  "type": "module",
+  "packageManager": "pnpm@10.34.9",
+  "scripts": {
+    "generate": "node scripts/generate.ts",
+    "check": "node scripts/generate.ts --check",
+    "banner": "node scripts/banner.ts",
+    "verify": "node scripts/verify.ts",
+    "render": "node scripts/render.ts",
+    "package": "vsce package --no-dependencies",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.5",
+    "@mistpine/port-kit": "^0.1.0",
+    "@types/node": "^26.6.6",
+    "@vscode/vsce": "^4.1.1",
+    "ovsx": "^1.4.0",
+    "playwright-core": "^1.64.1",
+    "typescript": "^7.0.2"
+  }
+}

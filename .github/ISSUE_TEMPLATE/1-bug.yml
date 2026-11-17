@@ -1,0 +1,59 @@
+# Filing through the API or `gh issue create`? Forms only apply on the web:
+# write the body with each field's label below as a `### ` heading, in order.
+name: Wrong or broken colors
+description: Something in the wrong color, unreadable, or left in VS Code's default colors.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        mistpine.vscode follows the [mistpine spec](https://github.com/mistpine/mistpine/blob/main/docs/spec.md).
+        A color that differs from the spec is a bug here; a spec color you'd like
+        changed belongs in [mistpine](https://github.com/mistpine/mistpine/issues/new/choose).
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong
+      description: What you see, where (editor, side bar, a widget, the terminal, an extension's view), and what you expected.
+    validations:
+      required: true
+  - type: dropdown
+    id: editor
+    attributes:
+      label: Editor
+      options:
+        - VS Code
+        - Cursor
+        - VSCodium
+        - Another VS Code-based editor
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image here.
+  - type: textarea
+    id: scopes
+    attributes:
+      label: Token or color
+      description: |
+        For syntax colors, the output of **Developer: Inspect Editor Tokens and Scopes** on the token.
+        For interface colors, the element and, if you know it, the color id (`list.hoverBackground`).
+      render: text
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      description: The editor's version (Help → About), the OS, the mistpine version, and the language extension if it's about syntax.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I'm on the latest mistpine release.
+          required: true
+        - label: It still happens without `workbench.colorCustomizations` and `editor.tokenColorCustomizations` in my settings.

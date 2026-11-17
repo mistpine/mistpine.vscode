@@ -1,0 +1,7 @@
+node_modules/
+*.tsbuildinfo
+*.vsix
+.DS_Store
+# Downloaded VS Code and Cursor builds, and render scratch (pnpm verify, pnpm render).
+.cache/
+.render/
