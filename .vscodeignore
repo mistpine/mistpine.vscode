@@ -1,0 +1,9 @@
+# The .vsix holds the theme, the manifest, the icon and the docs; everything
+# else is tooling.
+**
+!package.json
+!themes/mistpine-color-theme.json
+!assets/icon.png
+!README.md
+!CHANGELOG.md
+!LICENSE

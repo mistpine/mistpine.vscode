@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    # The theme must match src/ and the current mistpine spec, and load in
+    # the pinned VS Code and Cursor without unknown or unapplied colors.
+    uses: mistpine/port-kit/.github/workflows/port.yml@v0.1.0
+    with:
+      verify: true
